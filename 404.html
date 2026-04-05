@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сторінку не знайдено — Rainbowkids</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    body { padding-top: var(--header-h); }
+    .not-found-wrap { min-height: calc(100vh - var(--header-h)); display: flex; align-items: center; justify-content: center; }
+    .not-found { text-align: center; padding: 60px 24px; }
+    .not-found-emoji { font-size: 80px; margin-bottom: 24px; animation: float 3s ease-in-out infinite; }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-16px)} }
+    .not-found-big { font-family: var(--font-display); font-size: clamp(80px,15vw,160px); line-height:1; color:var(--terra-pale); font-weight:700; margin-bottom:-20px; position:relative; }
+    .not-found-big span { color:var(--terra); }
+    .not-found h2 { font-family:var(--font-display); font-size:clamp(24px,3vw,36px); margin-bottom:16px; }
+    .not-found p { color:var(--warm-gray); max-width:420px; margin:0 auto 40px; font-size:16px; line-height:1.7; }
+    .not-found-links { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:48px; }
+    .popular-section { max-width:600px; margin:0 auto; text-align:left; }
+    .popular-section h3 { font-weight:700; margin-bottom:16px; color:var(--deep-mid); font-size:15px; }
+    .popular-links { display:flex; flex-wrap:wrap; gap:8px; }
+    .popular-link { padding:8px 16px; background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius-full); font-size:13px; color:var(--deep-mid); transition:var(--transition); }
+    .popular-link:hover { border-color:var(--terra); color:var(--terra); background:var(--terra-pale); }
+  </style>
+</head>
+<body>
+
+<header class="header scrolled">
+  <div class="container">
+    <div class="header-inner">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">👟</div>
+        <div>
+          <div class="logo-text">Rainbow<span>kids</span></div>
+          <div class="logo-sub">Дитяче взуття</div>
+        </div>
+      </a>
+      <div style="margin-left:auto;">
+        <a href="../index.html" class="btn btn-primary btn-sm">На головну</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="not-found-wrap">
+  <div class="not-found">
+    <div class="not-found-emoji">👟</div>
+    <div class="not-found-big"><span>4</span>0<span>4</span></div>
+    <h2>Упс! Сторінку не знайдено</h2>
+    <p>Схоже, ця сторінка кудись пішла гуляти. Але у нас є багато чудового взуття!</p>
+
+    <div class="not-found-links">
+      <a href="../index.html" class="btn btn-primary btn-lg">🏠 На головну</a>
+      <a href="catalog.html" class="btn btn-secondary btn-lg">👟 До каталогу</a>
+    </div>
+
+    <div class="popular-section">
+      <h3>Популярні розділи:</h3>
+      <div class="popular-links">
+        <a href="catalog.html?filter=new" class="popular-link">✨ Новинки</a>
+        <a href="catalog.html?filter=sale" class="popular-link">🔥 Розпродаж</a>
+        <a href="catalog.html?cat=boys" class="popular-link">👦 Для хлопчиків</a>
+        <a href="catalog.html?cat=girls" class="popular-link">👧 Для дівчаток</a>
+        <a href="catalog.html?cat=summer" class="popular-link">☀️ Літнє взуття</a>
+        <a href="catalog.html?cat=winter" class="popular-link">❄️ Зимове взуття</a>
+        <a href="delivery.html" class="popular-link">📦 Доставка</a>
+        <a href="returns.html" class="popular-link">🔄 Повернення</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
