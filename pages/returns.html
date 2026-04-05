@@ -1,1 +1,172 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Обмін та повернення — Rainbowkids</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    body { padding-top: var(--header-h); }
+    .info-page { padding: 0 0 80px; }
+    .step-cards { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; margin-bottom: 48px; }
+    .step-card { background: var(--white); border-radius: var(--radius-lg); padding: 28px 24px; text-align: center; box-shadow: var(--shadow-card); position: relative; }
+    .step-card-num { width: 48px; height: 48px; background: var(--terra); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 22px; font-weight: 700; margin: 0 auto 16px; }
+    .step-card h4 { font-weight: 700; margin-bottom: 8px; font-size: 16px; }
+    .step-card p { font-size: 13px; color: var(--warm-gray); line-height: 1.6; }
+    .conditions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 48px; }
+    .condition-card { border-radius: var(--radius-lg); padding: 28px; }
+    .condition-card.yes { background: var(--sage-pale); border: 1.5px solid var(--sage-light); }
+    .condition-card.no { background: #FFF0F0; border: 1.5px solid #F5B5B5; }
+    .condition-card h3 { font-weight: 700; margin-bottom: 16px; font-size: 18px; display: flex; align-items: center; gap: 10px; }
+    .condition-card.yes h3 { color: var(--sage); }
+    .condition-card.no h3 { color: var(--error); }
+    .condition-list { display: flex; flex-direction: column; gap: 10px; }
+    .condition-item { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--deep-mid); }
+    @media(max-width:768px) { .step-cards { grid-template-columns: repeat(2,1fr); } .conditions-grid { grid-template-columns: 1fr; } }
+    @media(max-width:480px) { .step-cards { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
 
+<header class="header scrolled" id="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">👟</div>
+        <div>
+          <div class="logo-text">Rainbow<span>kids</span></div>
+          <div class="logo-sub">Дитяче взуття</div>
+        </div>
+      </a>
+      <nav class="nav">
+        <a href="../index.html" class="nav-link">Головна</a>
+        <a href="catalog.html" class="nav-link">Каталог</a>
+        <a href="delivery.html" class="nav-link">Доставка</a>
+        <a href="returns.html" class="nav-link active">Повернення</a>
+      </nav>
+      <div class="header-actions">
+        <div class="action-btn" onclick="toggleSearch()">🔍</div>
+        <div class="action-btn" onclick="toggleCart()">🛒<span class="badge-count" id="cartCount">0</span></div>
+        <div class="burger" id="burger" onclick="toggleMobileNav()"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav"><ul class="mobile-nav-list"><li><a href="../index.html" class="mobile-nav-link">Головна <span>›</span></a></li><li><a href="catalog.html" class="mobile-nav-link">Каталог <span>›</span></a></li><li><a href="delivery.html" class="mobile-nav-link">Доставка <span>›</span></a></li><li><a href="returns.html" class="mobile-nav-link">Повернення <span>›</span></a></li></ul></div>
+
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumbs" style="margin-bottom:12px;">
+      <a href="../index.html" class="breadcrumb-item">Головна</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Обмін та повернення</span>
+    </div>
+    <h1>Обмін та повернення</h1>
+    <p style="color:var(--warm-gray); margin-top:8px; font-size:16px;">14 днів на обмін або повернення без зайвих питань</p>
+  </div>
+</div>
+
+<section class="info-page">
+  <div class="container" style="padding-top:48px;">
+
+    <div style="background:var(--terra-pale); border:1.5px solid var(--terra); border-radius:var(--radius-lg); padding:24px 32px; display:flex; align-items:center; gap:20px; margin-bottom:48px; flex-wrap:wrap;">
+      <span style="font-size:48px;">🔄</span>
+      <div>
+        <h3 style="font-weight:700; font-size:20px; color:var(--terra); margin-bottom:6px;">14 днів на повернення без причини</h3>
+        <p style="font-size:14px; color:var(--deep-mid);">Якщо товар не підійшов за розміром або з будь-якої іншої причини — ми приймемо повернення протягом 14 днів з моменту отримання.</p>
+      </div>
+    </div>
+
+    <h2 class="section-title" style="margin-bottom:8px; text-align:center;">Як повернути товар</h2>
+    <p style="text-align:center; color:var(--warm-gray); margin-bottom:40px;">4 простих кроки</p>
+
+    <div class="step-cards">
+      <div class="step-card">
+        <div class="step-card-num">1</div>
+        <h4>Напишіть нам</h4>
+        <p>Повідомте менеджера в Telegram, Viber або Instagram про бажання повернути товар</p>
+      </div>
+      <div class="step-card">
+        <div class="step-card-num">2</div>
+        <h4>Упакуйте товар</h4>
+        <p>Покладіть взуття в оригінальну коробку з усіма бирками та аксесуарами</p>
+      </div>
+      <div class="step-card">
+        <div class="step-card-num">3</div>
+        <h4>Відправте нам</h4>
+        <p>Надішліть посилку Новою Поштою або Укрпоштою на наш склад (адреса від менеджера)</p>
+      </div>
+      <div class="step-card">
+        <div class="step-card-num">4</div>
+        <h4>Отримайте кошти</h4>
+        <p>Після перевірки товару повертаємо кошти на картку протягом 1-3 банківських днів</p>
+      </div>
+    </div>
+
+    <h2 class="section-title" style="margin-bottom:32px;">Умови обміну та повернення</h2>
+
+    <div class="conditions-grid">
+      <div class="condition-card yes">
+        <h3>✅ Приймаємо повернення</h3>
+        <div class="condition-list">
+          <div class="condition-item"><span>✓</span>Товар не підійшов за розміром</div>
+          <div class="condition-item"><span>✓</span>Товар не сподобався з будь-якої причини</div>
+          <div class="condition-item"><span>✓</span>Виявлено виробничий дефект</div>
+          <div class="condition-item"><span>✓</span>Товар пошкоджено під час доставки</div>
+          <div class="condition-item"><span>✓</span>Надіслано не той товар</div>
+          <div class="condition-item"><span>✓</span>Товар не відповідає опису</div>
+        </div>
+      </div>
+      <div class="condition-card no">
+        <h3>❌ Не приймаємо повернення</h3>
+        <div class="condition-list">
+          <div class="condition-item"><span>✗</span>Товар був у використанні (сліди носіння)</div>
+          <div class="condition-item"><span>✗</span>Пошкоджена або відсутня оригінальна упаковка</div>
+          <div class="condition-item"><span>✗</span>Відрізані або відсутні бирки та ярлики</div>
+          <div class="condition-item"><span>✗</span>Минуло більше 14 днів з моменту отримання</div>
+          <div class="condition-item"><span>✗</span>Механічні пошкодження з вини покупця</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--white); border-radius:var(--radius-xl); padding:48px; box-shadow:var(--shadow-card); margin-bottom:48px;">
+      <h3 style="font-family:var(--font-display); font-size:26px; margin-bottom:24px;">Часті запитання</h3>
+      <div style="display:flex; flex-direction:column; gap:20px;">
+        <div style="padding-bottom:20px; border-bottom:1px solid var(--border);">
+          <h4 style="font-weight:700; margin-bottom:8px;">Хто оплачує доставку при поверненні?</h4>
+          <p style="font-size:14px; color:var(--warm-gray);">Якщо повернення з вини магазину (брак, не той товар) — ми оплачуємо доставку. Якщо з причин покупця (не підійшов розмір) — покупець оплачує пересилку.</p>
+        </div>
+        <div style="padding-bottom:20px; border-bottom:1px solid var(--border);">
+          <h4 style="font-weight:700; margin-bottom:8px;">Чи можна обміняти товар на інший розмір?</h4>
+          <p style="font-size:14px; color:var(--warm-gray);">Так! Напишіть нам і ми підберемо потрібний розмір. Якщо потрібний розмір є в наявності — відправляємо обмін одразу після отримання вашого повернення.</p>
+        </div>
+        <div>
+          <h4 style="font-weight:700; margin-bottom:8px;">Як отримати гроші після повернення?</h4>
+          <p style="font-size:14px; color:var(--warm-gray);">Після перевірки товару (1 день) повертаємо кошти на карту Visa/Mastercard протягом 1-3 банківських днів.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--deep); border-radius:var(--radius-xl); padding:48px; text-align:center; color:white;">
+      <div style="font-size:48px; margin-bottom:16px;">💬</div>
+      <h3 style="font-family:var(--font-display); font-size:28px; margin-bottom:12px;">Потрібна допомога?</h3>
+      <p style="color:rgba(255,255,255,.7); margin-bottom:28px;">Напишіть нашому менеджеру — відповідаємо швидко!</p>
+      <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <a href="https://t.me/rainbowkids" class="btn" style="background:#2AABEE; color:white; border-color:#2AABEE;">📱 Telegram</a>
+        <a href="viber://chat" class="btn" style="background:#7360f2; color:white; border-color:#7360f2;">📲 Viber</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="toast-container" id="toastContainer"></div>
+<div class="drawer-overlay" id="drawerOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header"><h3>Кошик</h3><div class="cart-close" onclick="closeCart()">✕</div></div>
+  <div class="cart-body" id="cartBody"><div class="cart-empty"><div class="cart-empty-icon">🛒</div><h4>Кошик порожній</h4></div></div>
+  <div class="cart-footer"><div class="cart-total"><span class="cart-total-label">Разом:</span><span class="cart-total-price" id="cartTotal">0 грн</span></div><a href="checkout.html" class="btn btn-primary btn-full">Оформити замовлення</a></div>
+</div>
+<div class="search-overlay" id="searchOverlay" onclick="closeSearch(event)"><div class="search-box"><div class="search-input-wrap"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="text" class="search-input" placeholder="Пошук взуття..."></div><p class="search-hint">Натисніть Esc щоб закрити</p></div></div>
+<script src="../js/main.js"></script>
+</body>
+</html>
