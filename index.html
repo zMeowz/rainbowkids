@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rainbowkids — Дитяче взуття з любов'ю</title>
+  <meta name="description" content="Інтернет-магазин дитячого взуття Rainbowkids. Великий вибір для дітей. Швидка доставка по Україні.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👟</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="mobileNav" class="mobile-nav">
+  <div id="mobileNavOverlay" class="mobile-nav-overlay"></div>
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" onclick="document.getElementById('mobileMenuBtn').click()">✕</button>
+    <a href="index.html" class="mobile-nav-link">🏠 Головна</a>
+    <a href="pages/catalog.html" class="mobile-nav-link">👟 Каталог</a>
+    <a href="#categories" class="mobile-nav-link">📦 Категорії</a>
+    <a href="#" class="mobile-nav-link">✨ Новинки</a>
+    <a href="#" class="mobile-nav-link">🏷️ Акції</a>
+    <a href="#" class="mobile-nav-link">ℹ️ Про нас</a>
+    <a href="#" class="mobile-nav-link">🚚 Доставка</a>
+    <a href="#" class="mobile-nav-link">📞 Контакти</a>
+    <div style="margin-top:auto;padding-top:24px;display:flex;flex-direction:column;gap:10px;">
+      <a href="https://t.me/rainbowkids" class="messenger-btn tg" style="justify-content:center;text-decoration:none;">Telegram</a>
+      <a href="viber://chat" class="messenger-btn vb" style="justify-content:center;text-decoration:none;">Viber</a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="header-top">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">R</div>
+      <div>
+        <span class="logo-text">Rainbowkids</span>
+        <span class="logo-sub">дитяче взуття</span>
+      </div>
+    </a>
+    <div class="header-search">
+      <svg class="search-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" placeholder="Пошук: кросівки, чобітки, сандалі...">
+    </div>
+    <div class="header-actions">
+      <button class="action-btn" onclick="focusSearch()" title="Пошук">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="action-btn" title="Обране">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span class="badge-count wish-count">0</span>
+      </button>
+      <button class="action-btn" title="Кабінет">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </button>
+      <button class="action-btn cart-action" onclick="openCart()" title="Кошик">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="badge-count cart-count">0</span>
+      </button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <nav class="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-link active">Головна</a>
+      <a href="pages/catalog.html" class="nav-link">Каталог</a>
+      <a href="#" class="nav-link">Дівчатка</a>
+      <a href="#" class="nav-link">Хлопчики</a>
+      <a href="#" class="nav-link">Малюки</a>
+      <a href="#" class="nav-link">Новинки <span class="new-dot"></span></a>
+      <a href="#" class="nav-link">Акції 🏷️</a>
+      <a href="#" class="nav-link">Бренди</a>
+      <a href="#" class="nav-link">Про нас</a>
+      <a href="#" class="nav-link">Доставка</a>
+      <a href="#" class="nav-link">Контакти</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="hero-content fade-up">
+    <div class="hero-tag"><span></span>Нова колекція Весна–Літо 2025</div>
+    <h1>Взуття, яке<br><em>любить</em> дітей</h1>
+    <p class="hero-desc">Якісне, зручне й стильне дитяче взуття для кожного кроку. Тут ростуть маленькі пригоди — крок за кроком.</p>
+    <div class="hero-actions">
+      <a href="pages/catalog.html" class="btn btn-coral btn-lg">Переглянути каталог</a>
+      <button class="btn btn-outline btn-lg" onclick="document.getElementById('categories').scrollIntoView({behavior:'smooth'})">Категорії</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item"><div class="stat-num">2 000+</div><div class="stat-label">моделей взуття</div></div>
+      <div class="stat-item"><div class="stat-num">15 000+</div><div class="stat-label">задоволених родин</div></div>
+      <div class="stat-item"><div class="stat-num">4.9 ★</div><div class="stat-label">рейтинг відгуків</div></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-img-placeholder">
+      <div class="big-shoe-visual"><div class="shoe-circle"><span>👟</span></div></div>
+      <div class="floating-card card-1">
+        <div class="fc-icon" style="background:#FFF0E8;">🚚</div>
+        <div><strong>Безкоштовна</strong><br><small style="color:var(--text-muted)">доставка від 1500₴</small></div>
+      </div>
+      <div class="floating-card card-2">
+        <div class="fc-icon" style="background:#E8F5E3;">✅</div>
+        <div><strong>Обмін 14 днів</strong><br><small style="color:var(--text-muted)">без питань</small></div>
+      </div>
+      <div class="floating-card card-3">
+        <div class="fc-icon" style="background:#F0E8FF;">📏</div>
+        <div><strong>Таблиця розмірів</strong><br><small style="color:var(--text-muted)">з підбором</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="features-strip">
+  <div class="features-track">
+    <div class="feature-item"><span>🚚</span> Доставка 1–2 дні</div><div class="feature-sep">·</div>
+    <div class="feature-item"><span>↩️</span> Обмін 14 днів</div><div class="feature-sep">·</div>
+    <div class="feature-item"><span>💳</span> Оплата частинами</div><div class="feature-sep">·</div>
+    <div class="feature-item"><span>📏</span> Допомога з розміром</div><div class="feature-sep">·</div>
+    <div class="feature-item"><span>💬</span> Telegram і Viber</div><div class="feature-sep">·</div>
+    <div class="feature-item"><span>⭐</span> 4.9 рейтинг</div><div class="feature-sep">·</div>
+    <div class="feature-item"><span>🚚</span> Доставка 1–2 дні</div><div class="feature-sep">·</div>
+    <div class="feature-item"><span>↩️</span> Обмін 14 днів</div><div class="feature-sep">·</div>
+    <div class="feature-item"><span>💳</span> Оплата частинами</div><div class="feature-sep">·</div>
+    <div class="feature-item"><span>📏</span> Допомога з розміром</div><div class="feature-sep">·</div>
+    <div class="feature-item"><span>💬</span> Telegram і Viber</div><div class="feature-sep">·</div>
+    <div class="feature-item"><span>⭐</span> 4.9 рейтинг</div><div class="feature-sep">·</div>
+  </div>
+</div>
+
+<section class="categories-section" id="categories">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-tag">Категорії</div>
+      <h2>Знайдіть ідеальне взуття</h2>
+      <p>Широкий вибір для кожного сезону, від малюків до підлітків</p>
+    </div>
+    <div class="categories-grid">
+      <div class="cat-card large fade-up stagger-1">
+        <div class="cat-img"><div class="cat-img-inner">👟👠</div></div>
+        <div class="cat-body"><div><div class="cat-name">Для дівчаток</div><div class="cat-count">847 моделей</div></div><svg class="cat-arrow" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+      <div class="cat-card fade-up stagger-2">
+        <div class="cat-img"><div class="cat-img-inner">👞</div></div>
+        <div class="cat-body"><div><div class="cat-name">Для хлопчиків</div><div class="cat-count">623 моделі</div></div><svg class="cat-arrow" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+      <div class="cat-card fade-up stagger-3">
+        <div class="cat-img"><div class="cat-img-inner">🥿</div></div>
+        <div class="cat-body"><div><div class="cat-name">Малюки 16–22</div><div class="cat-count">312 моделей</div></div><svg class="cat-arrow" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+      <div class="cat-card fade-up stagger-1">
+        <div class="cat-img"><div class="cat-img-inner">🏃</div></div>
+        <div class="cat-body"><div><div class="cat-name">Кросівки</div><div class="cat-count">445 моделей</div></div><svg class="cat-arrow" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+      <div class="cat-card fade-up stagger-2">
+        <div class="cat-img"><div class="cat-img-inner">⛄</div></div>
+        <div class="cat-body"><div><div class="cat-name">Зимове взуття</div><div class="cat-count">298 моделей</div></div><svg class="cat-arrow" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+      <div class="cat-card fade-up stagger-3">
+        <div class="cat-img"><div class="cat-img-inner">☀️</div></div>
+        <div class="cat-body"><div><div class="cat-name">Літнє взуття</div><div class="cat-count">387 моделей</div></div><svg class="cat-arrow" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="products-section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-tag">Товари</div>
+      <h2>Популярні моделі</h2>
+      <p>Найбільш обрані покупцями — з оновленим асортиментом щотижня</p>
+    </div>
+    <div class="products-tabs fade-up">
+      <button class="tab-btn active">Усі</button>
+      <button class="tab-btn">Новинки</button>
+      <button class="tab-btn">Хіти продажів</button>
+      <button class="tab-btn">Акції</button>
+      <button class="tab-btn">До 1000 ₴</button>
+    </div>
+    <div class="products-grid">
+      <div class="product-card fade-up stagger-1">
+        <div class="product-img"><div class="product-img-inner">👟</div>
+          <div class="product-badges"><span class="badge badge-new">Новинка</span></div>
+          <div class="product-actions">
+            <button class="product-action-btn" onclick="toggleWish(this,'Кросівки Sport Air Pro')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+          </div>
+          <div class="product-sizes"><span class="sizes-label">Розмір:</span><span class="size-chip">28</span><span class="size-chip">29</span><span class="size-chip">30</span><span class="size-chip sold-out">31</span><span class="size-chip">32</span></div>
+        </div>
+        <div class="product-body"><div class="product-brand">Nike Kids</div><div class="product-name">Кросівки Sport Air Pro</div>
+          <div class="product-footer"><div class="product-price"><span class="price-current">1 450 ₴</span><span class="price-old">1 800 ₴</span><span class="price-discount">-19%</span></div>
+            <button class="cart-btn" onclick="addToCart('Кросівки Sport Air Pro',1450,'32','👟')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card fade-up stagger-2">
+        <div class="product-img"><div class="product-img-inner">👠</div>
+          <div class="product-badges"><span class="badge badge-hit">Хіт</span></div>
+          <div class="product-actions"><button class="product-action-btn" onclick="toggleWish(this,'Туфлі Princess Bow')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div>
+          <div class="product-sizes"><span class="sizes-label">Розмір:</span><span class="size-chip">26</span><span class="size-chip">27</span><span class="size-chip">28</span><span class="size-chip">29</span><span class="size-chip">30</span></div>
+        </div>
+        <div class="product-body"><div class="product-brand">Bartek</div><div class="product-name">Туфлі Princess Bow</div>
+          <div class="product-footer"><div class="product-price"><span class="price-current">890 ₴</span></div>
+            <button class="cart-btn" onclick="addToCart('Туфлі Princess Bow',890,'28','👠')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card fade-up stagger-3">
+        <div class="product-img"><div class="product-img-inner">🥾</div>
+          <div class="product-badges"><span class="badge badge-sale">-30%</span></div>
+          <div class="product-actions"><button class="product-action-btn" onclick="toggleWish(this,'Чоботи Winter Warm Plus')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div>
+          <div class="product-sizes"><span class="sizes-label">Розмір:</span><span class="size-chip">30</span><span class="size-chip">31</span><span class="size-chip sold-out">32</span><span class="size-chip">33</span></div>
+        </div>
+        <div class="product-body"><div class="product-brand">Geox</div><div class="product-name">Чоботи Winter Warm Plus</div>
+          <div class="product-footer"><div class="product-price"><span class="price-current">1 750 ₴</span><span class="price-old">2 500 ₴</span><span class="price-discount">-30%</span></div>
+            <button class="cart-btn" onclick="addToCart('Чоботи Winter Warm Plus',1750,'31','🥾')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card fade-up stagger-4">
+        <div class="product-img"><div class="product-img-inner">🩴</div>
+          <div class="product-badges"><span class="badge badge-new">Новинка</span></div>
+          <div class="product-actions"><button class="product-action-btn" onclick="toggleWish(this,'Сандалі Summer Joy Kids')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div>
+          <div class="product-sizes"><span class="sizes-label">Розмір:</span><span class="size-chip">24</span><span class="size-chip">25</span><span class="size-chip">26</span><span class="size-chip">27</span></div>
+        </div>
+        <div class="product-body"><div class="product-brand">Clarks</div><div class="product-name">Сандалі Summer Joy Kids</div>
+          <div class="product-footer"><div class="product-price"><span class="price-current">720 ₴</span></div>
+            <button class="cart-btn" onclick="addToCart('Сандалі Summer Joy Kids',720,'26','🩴')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card fade-up stagger-1">
+        <div class="product-img"><div class="product-img-inner">👟</div>
+          <div class="product-badges"><span class="badge badge-hit">Хіт</span></div>
+          <div class="product-actions"><button class="product-action-btn" onclick="toggleWish(this,'Кеди Classic White Jr.')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div>
+          <div class="product-sizes"><span class="sizes-label">Розмір:</span><span class="size-chip">32</span><span class="size-chip">33</span><span class="size-chip">34</span><span class="size-chip">35</span><span class="size-chip">36</span></div>
+        </div>
+        <div class="product-body"><div class="product-brand">Converse</div><div class="product-name">Кеди Classic White Jr.</div>
+          <div class="product-footer"><div class="product-price"><span class="price-current">1 290 ₴</span><span class="price-old">1 490 ₴</span><span class="price-discount">-13%</span></div>
+            <button class="cart-btn" onclick="addToCart('Кеди Classic White Jr.',1290,'34','👟')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card fade-up stagger-2">
+        <div class="product-img"><div class="product-img-inner">🥿</div>
+          <div class="product-badges"><span class="badge badge-new">Новинка</span><span class="badge badge-sale">-25%</span></div>
+          <div class="product-actions"><button class="product-action-btn" onclick="toggleWish(this,'Мокасини Soft Step Baby')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div>
+          <div class="product-sizes"><span class="sizes-label">Розмір:</span><span class="size-chip">20</span><span class="size-chip">21</span><span class="size-chip">22</span><span class="size-chip sold-out">23</span></div>
+        </div>
+        <div class="product-body"><div class="product-brand">Bobux</div><div class="product-name">Мокасини Soft Step Baby</div>
+          <div class="product-footer"><div class="product-price"><span class="price-current">675 ₴</span><span class="price-old">900 ₴</span><span class="price-discount">-25%</span></div>
+            <button class="cart-btn" onclick="addToCart('Мокасини Soft Step Baby',675,'21','🥿')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card fade-up stagger-3">
+        <div class="product-img"><div class="product-img-inner">🏃</div>
+          <div class="product-badges"><span class="badge badge-hit">Хіт</span></div>
+          <div class="product-actions"><button class="product-action-btn" onclick="toggleWish(this,'Кросівки Run Fast Junior')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div>
+          <div class="product-sizes"><span class="sizes-label">Розмір:</span><span class="size-chip">33</span><span class="size-chip">34</span><span class="size-chip">35</span><span class="size-chip">36</span><span class="size-chip">37</span></div>
+        </div>
+        <div class="product-body"><div class="product-brand">Adidas Kids</div><div class="product-name">Кросівки Run Fast Junior</div>
+          <div class="product-footer"><div class="product-price"><span class="price-current">1 890 ₴</span></div>
+            <button class="cart-btn" onclick="addToCart('Кросівки Run Fast Junior',1890,'35','🏃')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card fade-up stagger-4">
+        <div class="product-img"><div class="product-img-inner">👞</div>
+          <div class="product-badges"><span class="badge badge-sale">-20%</span></div>
+          <div class="product-actions"><button class="product-action-btn" onclick="toggleWish(this,'Туфлі School Classic Premium')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div>
+          <div class="product-sizes"><span class="sizes-label">Розмір:</span><span class="size-chip">32</span><span class="size-chip">33</span><span class="size-chip sold-out">34</span><span class="size-chip">35</span></div>
+        </div>
+        <div class="product-body"><div class="product-brand">Naturino</div><div class="product-name">Туфлі School Classic Premium</div>
+          <div class="product-footer"><div class="product-price"><span class="price-current">1 360 ₴</span><span class="price-old">1 700 ₴</span><span class="price-discount">-20%</span></div>
+            <button class="cart-btn" onclick="addToCart('Туфлі School Classic Premium',1360,'33','👞')"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px;" class="fade-up">
+      <a href="pages/catalog.html" class="btn btn-outline btn-lg">Переглянути весь каталог →</a>
+    </div>
+  </div>
+</section>
+
+<section class="promo-section">
+  <div class="container">
+    <div class="promo-banner fade-in">
+      <div class="promo-content">
+        <span class="promo-tag">🔥 Гаряча акція</span>
+        <h2>Розпродаж<br>до -50% на зимові моделі</h2>
+        <p>Не пропустіть вигідні ціни на якісне зимове взуття. Обмежена кількість розмірів.</p>
+        <div class="promo-actions">
+          <button class="btn btn-coral btn-lg" onclick="showToast('🏷️ Переходимо в акції!')">Дивитися акції</button>
+          <button class="btn btn-ghost btn-lg" style="color:rgba(255,255,255,0.8);">Докладніше</button>
+        </div>
+      </div>
+      <div class="promo-visual">🥾❄️</div>
+    </div>
+  </div>
+</section>
+
+<section class="benefits-section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-tag">Переваги</div>
+      <h2>Чому обирають нас</h2>
+      <p>Ми дбаємо про кожного покупця і його дитину</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card fade-up stagger-1"><div class="benefit-icon">🚚</div><h3>Швидка доставка</h3><p>Доставляємо по всій Україні за 1–2 дні. Нова Пошта, Укрпошта. Безкоштовно від 1500 ₴.</p></div>
+      <div class="benefit-card fade-up stagger-2"><div class="benefit-icon">↩️</div><h3>Обмін і повернення</h3><p>14 днів на обмін або повернення без зайвих питань. Ми розуміємо — розмір може не підійти.</p></div>
+      <div class="benefit-card fade-up stagger-3"><div class="benefit-icon">🏆</div><h3>Якість і сертифікати</h3><p>Тільки перевірені бренди. Усі товари сертифіковані та безпечні для дитячих ніг.</p></div>
+      <div class="benefit-card fade-up stagger-1"><div class="benefit-icon">📏</div><h3>Допомога з розміром</h3><p>Детальна таблиця розмірів і консультація менеджера. Підберемо ідеальний розмір.</p></div>
+      <div class="benefit-card fade-up stagger-2"><div class="benefit-icon">💳</div><h3>Зручна оплата</h3><p>Картка, накладений платіж, розстрочка без переплати. Оплачуйте так, як вам зручно.</p></div>
+      <div class="benefit-card fade-up stagger-3"><div class="benefit-icon">💬</div><h3>Підтримка в мессенджерах</h3><p>Telegram, Viber, Instagram. Відповідаємо швидко з 9:00 до 20:00 щодня.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:0 0 80px;">
+  <div class="container">
+    <div class="trust-bar fade-in">
+      <div class="trust-item"><h3>15 000+</h3><p>задоволених родин</p></div>
+      <div class="trust-item"><h3>2 000+</h3><p>моделей в наявності</p></div>
+      <div class="trust-item"><h3>4.9 ★</h3><p>середній рейтинг відгуків</p></div>
+      <div class="trust-item"><h3>5 років</h3><p>на ринку дитячого взуття</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews-section">
+  <div class="container">
+    <div class="section-header fade-up"><div class="section-tag">Відгуки</div><h2>Що кажуть батьки</h2><p>Більше 2000 реальних відгуків від наших покупців</p></div>
+    <div class="reviews-grid">
+      <div class="review-card fade-up stagger-1"><div class="review-stars">★★★★★</div><p class="review-text">Замовляли кросівки для сина вже втретє. Якість чудова, ніг не натирає, доставка дуже швидка. Менеджер допоміг підібрати правильний розмір — рекомендую!</p><div class="review-author"><div class="review-avatar" style="background:var(--coral);">О</div><div><div class="review-name">Олена Коваль</div><div class="review-date">2 тижні тому · Київ</div></div></div></div>
+      <div class="review-card fade-up stagger-2"><div class="review-stars">★★★★★</div><p class="review-text">Замовила сандалі доньці на літо. Прийшли за день! Упаковка акуратна, якість відповідає опису. Буду замовляти ще. Дуже задоволена магазином!</p><div class="review-author"><div class="review-avatar" style="background:var(--sage);">М</div><div><div class="review-name">Марина Бойко</div><div class="review-date">1 місяць тому · Харків</div></div></div></div>
+      <div class="review-card fade-up stagger-3"><div class="review-stars">★★★★★</div><p class="review-text">Нарешті знайшла магазин, де можна зручно підібрати розмір! Таблиця розмірів дуже зручна. Чобітки на зиму — топ. Дитина задоволена, ноги теплі!</p><div class="review-author"><div class="review-avatar" style="background:var(--lavender);color:var(--text-primary);">Т</div><div><div class="review-name">Тетяна Лисенко</div><div class="review-date">3 тижні тому · Одеса</div></div></div></div>
+    </div>
+    <div style="text-align:center;" class="fade-up"><button class="btn btn-outline">Всі відгуки (2 140+)</button></div>
+  </div>
+</section>
+
+<section class="instagram-section">
+  <div class="container">
+    <div class="section-header fade-up"><div class="section-tag">Instagram</div><h2>@rainbowkids.ua</h2><p>Підписуйтесь і дивіться реальні фото наших покупців</p></div>
+    <div class="instagram-grid fade-in">
+      <div class="ig-item"><span>👟</span><div class="ig-overlay">❤️ 142</div></div>
+      <div class="ig-item"><span>🌈</span><div class="ig-overlay">❤️ 98</div></div>
+      <div class="ig-item"><span>👶</span><div class="ig-overlay">❤️ 213</div></div>
+      <div class="ig-item"><span>🥾</span><div class="ig-overlay">❤️ 87</div></div>
+      <div class="ig-item"><span>🩴</span><div class="ig-overlay">❤️ 165</div></div>
+      <div class="ig-item"><span>🎀</span><div class="ig-overlay">❤️ 311</div></div>
+    </div>
+    <div style="text-align:center;margin-top:32px;" class="fade-up"><a href="https://instagram.com/rainbowkids.ua" class="btn btn-outline" target="_blank" rel="noopener">Підписатися в Instagram</a></div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header fade-up"><div class="section-tag">FAQ</div><h2>Часті запитання</h2><p>Відповіді на найпопулярніші питання</p></div>
+    <div class="faq-grid">
+      <div class="faq-item"><div class="faq-q">Як підібрати розмір дитячого взуття? <div class="faq-icon">+</div></div><div class="faq-a">Виміряйте стопу дитини в сантиметрах і порівняйте з нашою таблицею розмірів. Якщо є сумніви — пишіть нам у Telegram або Viber, підберемо разом.</div></div>
+      <div class="faq-item"><div class="faq-q">Яка доставка і терміни? <div class="faq-icon">+</div></div><div class="faq-a">Доставляємо Новою Поштою та Укрпоштою по всій Україні. Зазвичай 1–2 дні після відправки. Відправляємо в день замовлення або наступного дня.</div></div>
+      <div class="faq-item"><div class="faq-q">Як повернути або обміняти товар? <div class="faq-icon">+</div></div><div class="faq-a">Протягом 14 днів ви можете повернути або обміняти товар без жодних проблем. Напишіть нам — домовимося про деталі.</div></div>
+      <div class="faq-item"><div class="faq-q">Які способи оплати? <div class="faq-icon">+</div></div><div class="faq-a">Приймаємо оплату карткою онлайн, накладним платежем, через Privat24, а також пропонуємо розстрочку без переплати.</div></div>
+      <div class="faq-item"><div class="faq-q">Чи є безкоштовна доставка? <div class="faq-icon">+</div></div><div class="faq-a">Так! Безкоштовна доставка при замовленні від 1500 грн.</div></div>
+      <div class="faq-item"><div class="faq-q">Як зв'язатися з підтримкою? <div class="faq-icon">+</div></div><div class="faq-a">Telegram, Viber, Instagram або телефоном. Працюємо з 9:00 до 20:00 щодня. Зазвичай відповідаємо протягом 15–30 хвилин.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter-section">
+  <div class="container">
+    <div class="newsletter-inner fade-up">
+      <div class="section-tag" style="margin-bottom:16px;">Знижка 10%</div>
+      <h2>Отримайте знижку на перше замовлення</h2>
+      <p>Підпишіться на розсилку і отримайте промокод на знижку 10%.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Ваш email...">
+        <button class="btn btn-coral" onclick="showToast('🎉 Промокод надіслано!')">Отримати знижку</button>
+      </div>
+      <p class="newsletter-consent">Підписуючись, ви погоджуєтесь з <a href="#" style="color:var(--coral)">політикою конфіденційності</a>. Без спаму.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-logo">
+        <a href="index.html" class="logo"><div class="logo-mark">R</div><div><span class="logo-text">Rainbowkids</span><span class="logo-sub" style="color:rgba(255,255,255,0.4)">дитяче взуття</span></div></a>
+        <p style="color:rgba(255,255,255,0.6);margin-top:16px;">Якісне дитяче взуття з любов'ю. Ми допомагаємо дітям робити кожен крок з радістю.</p>
+        <div class="footer-messengers" style="margin-top:20px;">
+          <a href="https://t.me/rainbowkids" class="messenger-btn tg" target="_blank" rel="noopener">✈ Telegram</a>
+          <a href="viber://chat" class="messenger-btn vb">📱 Viber</a>
+          <a href="https://instagram.com" class="messenger-btn ig" target="_blank" rel="noopener">📸 Instagram</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Каталог</h4><ul class="footer-links"><li><a href="#">Для дівчаток</a></li><li><a href="#">Для хлопчиків</a></li><li><a href="#">Малюки</a></li><li><a href="#">Кросівки</a></li><li><a href="#">Новинки</a></li><li><a href="#">Акції</a></li></ul></div>
+      <div class="footer-col"><h4>Покупцям</h4><ul class="footer-links"><li><a href="#">Доставка і оплата</a></li><li><a href="#">Обмін і повернення</a></li><li><a href="#">Таблиця розмірів</a></li><li><a href="#">Мої замовлення</a></li><li><a href="#">FAQ</a></li></ul></div>
+      <div class="footer-col"><h4>Контакти</h4><ul class="footer-links"><li><a href="tel:+380991234567">📞 +38 099 123 45 67</a></li><li><a href="mailto:hello@rainbowkids.ua">✉️ hello@rainbowkids.ua</a></li><li><a href="#">Instagram</a></li><li><a href="#">Про нас</a></li></ul>
+        <div style="margin-top:24px;padding:20px;background:rgba(255,255,255,0.07);border-radius:16px;"><div style="color:rgba(255,255,255,0.5);font-size:0.75rem;margin-bottom:6px;">Графік роботи</div><div style="color:#fff;font-weight:600;font-size:0.9rem;">Пн–Нд 9:00–20:00</div></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 Rainbowkids. Усі права захищені.</span><div style="display:flex;gap:20px;flex-wrap:wrap;"><a href="#">Політика конфіденційності</a><a href="#">Умови використання</a></div></div>
+  </div>
+</footer>
+
+<div id="cartOverlay" class="cart-overlay"></div>
+<div id="cartDrawer" class="cart-drawer">
+  <div class="cart-header"><h3>Мій кошик</h3><button class="cart-close" onclick="closeCart()">✕</button></div>
+  <div class="cart-body" id="cartBody"><div class="cart-empty"><span>🛒</span><h4>Кошик порожній</h4><p>Додайте товари, щоб продовжити</p><button class="btn btn-coral btn-sm" onclick="closeCart()">В каталог</button></div></div>
+  <div class="cart-footer"><div class="cart-total"><span class="cart-total-label">Разом:</span><span class="cart-total-price" id="cartTotal">0 ₴</span></div><button class="btn btn-coral cart-checkout-btn btn-lg" onclick="showToast('🎉 Переходимо до оформлення!')">Оформити замовлення</button></div>
+</div>
+
+<div class="sticky-mobile">
+  <a href="pages/catalog.html" class="btn btn-outline" style="flex:1;justify-content:center;">Каталог</a>
+  <button class="btn btn-coral" style="flex:1;" onclick="openCart()">🛒 Кошик</button>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
